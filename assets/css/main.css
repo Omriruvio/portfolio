@@ -2060,6 +2060,41 @@ article.special {
   height: 100%;
   overflow: visible;
   margin-bottom: 15px;
+  position: relative;
+}
+
+/* #logo-eyes-full {
+  width: 300px;
+} */
+
+@keyframes blink {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    fill: transparent;
+  }
+  50% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    fill: black;
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    fill: transparent;
+  }
+}
+
+.logo-left-eyelid {
+  /* eyelid open */
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  fill: transparent;
+
+  /* eyelid shut */
+  /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); */
+
+  /* transition: clip-path 0.2s ease-in-out 2s !important; */
+}
+
+.logo-right-eyelid {
+  fill: transparent;
 }
 
 #header:hover .logo-head {
@@ -2067,15 +2102,27 @@ article.special {
   fill: rgb(145, 214, 16);
 }
 
-#header:hover .logo-glasses {
+#header:hover .logo-glasses,
+#header:hover .logo-left-eyelid,
+#header:hover .logo-right-eyelid {
   /* transform-origin: center; */
   transform: translateY(-75%);
 }
 
-.logo-glasses {
+#header:hover .logo-left-eyelid {
+  /* eyelid shut */
+  /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  fill: black; */
+
+  animation: blink 0.5s ease-in-out 4s 1 alternate none;
+}
+
+.logo-glasses,
+.logo-right-eyelid,
+.logo-left-eyelid {
   /* fill: green; */
   transition: all 2s ease-in-out;
-  fill: #51a4fb;
+  /* fill: #51a4fb; */
   /* fill-rule: evenodd; */
   /* stroke: red; */
 }
