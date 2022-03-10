@@ -2055,6 +2055,38 @@ article.special {
   text-align: center;
 }
 
+#omri-logo-icon {
+  max-width: 15vw;
+  height: 100%;
+  overflow: visible;
+  margin-bottom: 15px;
+}
+
+#header:hover .logo-head {
+  transform: rotate(180deg) /* translate3d(0, -25%, 0) */;
+  fill: rgb(145, 214, 16);
+}
+
+#header:hover .logo-glasses {
+  /* transform-origin: center; */
+  transform: translateY(-75%);
+}
+
+.logo-glasses {
+  /* fill: green; */
+  transition: all 2s ease-in-out;
+  fill: #51a4fb;
+  /* fill-rule: evenodd; */
+  /* stroke: red; */
+}
+
+.logo-head {
+  transform-origin: center;
+  transition: transform 2s ease-in-out, fill 1.5s ease 2.5s;
+  position: relative;
+  fill: #51a4fb;
+}
+
 header {
   text-align: center;
 }
@@ -2108,6 +2140,11 @@ header.major p {
   line-height: 1.75em;
   border-top: solid 1px rgba(224, 224, 224, 0.75);
   display: inline-block;
+}
+
+header.major a {
+  margin-top: 15px;
+  margin-right: 10px;
 }
 
 header.major.last {
