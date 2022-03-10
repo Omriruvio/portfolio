@@ -2081,20 +2081,26 @@ article.special {
     fill: transparent;
   }
 }
-
-.logo-left-eyelid {
-  /* eyelid open */
-  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-  fill: transparent;
-
-  /* eyelid shut */
-  /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); */
-
-  /* transition: clip-path 0.2s ease-in-out 2s !important; */
+@keyframes blinking {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    fill: transparent;
+  }
+  2.5% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    fill: black;
+  }
+  5%,
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    fill: transparent;
+  }
 }
 
+.logo-left-eyelid,
 .logo-right-eyelid {
-  fill: transparent;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  animation: blinking 10s ease-in-out infinite;
 }
 
 #header:hover .logo-head {
@@ -2109,12 +2115,19 @@ article.special {
   transform: translateY(-75%);
 }
 
-#header:hover .logo-left-eyelid {
+#header:hover .logo-left-eyelid,
+#header:hover .logo-right-eyelid {
   /* eyelid shut */
-  /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  /* clip-path: polygon,
+  
+  /* clip-rightpolygon(0 0, 100% 0, 100% 100%, 0 100%);
   fill: black; */
 
   animation: blink 0.5s ease-in-out 4s 1 alternate none;
+}
+
+#header:hover .logo-right-eyelid {
+  fill: transparent !important;
 }
 
 .logo-glasses,
