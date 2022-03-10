@@ -2086,11 +2086,11 @@ article.special {
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     fill: transparent;
   }
-  2.5% {
+  1.25% {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     fill: black;
   }
-  5%,
+  2.5%,
   100% {
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     fill: transparent;
@@ -2100,7 +2100,7 @@ article.special {
 .logo-left-eyelid,
 .logo-right-eyelid {
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-  animation: blinking 10s ease-in-out infinite;
+  animation: blinking 20s ease-in-out infinite;
 }
 
 #header:hover .logo-head {
