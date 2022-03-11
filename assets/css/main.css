@@ -333,6 +333,24 @@ blockquote {
   .container {
     width: 95% !important;
   }
+  .services__icons {
+    display: flex !important;
+    padding: 0 !important;
+    flex-direction: column;
+    /* display: none !important; */
+  }
+  .service__icon {
+    width: 30% !important;
+  }
+
+  #header {
+    background: unset !important;
+    background-image: url(images/top-3200.svg), url(./images/spacer.png) !important;
+    background-attachment: scroll, scroll !important;
+    background-position: center, top !important;
+    background-repeat: repeat-x, no-repeat !important;
+    background-size: 3200px 460px, cover !important;
+  }
 }
 
 @media screen and (max-width: 736px) {
@@ -3337,7 +3355,10 @@ input[type='button'].small,
     padding-right: 2em;
   }
   #header {
-    padding: 3em 0 9em 0;
+    padding: 5.7em 0 6em 0;
+  }
+  #header h1 {
+    max-width: 100%;
   }
 }
 
@@ -3423,7 +3444,7 @@ input[type='button'].small,
   #header {
     /* background-image: url('images/top-1280.svg'), url('images/overlay.png'), url('../../images/header.jpg');
     background-size: 1280px 184px, auto, cover; */
-    padding: 3em 0 7em 0;
+    padding: 7em 0 8em 0;
   }
 
   #header:before {
@@ -3471,7 +3492,7 @@ input[type='button'].small,
 }
 @media screen and (max-width: 530px) {
   #header {
-    padding: 2em 0 6em 0;
+    padding: 5em 0 10.5em 0;
   }
 }
 
@@ -3541,10 +3562,57 @@ input[type='button'].small,
   /* Header */
 
   #header {
-    padding: 2em 2em 5em;
+    padding: 4em 2em 8em;
   }
 
   #header br {
     display: none;
   }
+}
+
+.services__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.services__icons {
+  width: 50%;
+  /* height: fit-content; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* flex-wrap: wrap; */
+  justify-items: center;
+  gap: 20px;
+  padding-right: 2.5em;
+  align-items: center;
+  height: fit-content;
+}
+
+.service__icon {
+  width: 100%;
+}
+
+.services__content {
+  width: 50%;
+  padding-left: 2.5em;
+}
+
+#main .button {
+  margin-top: 2em;
+}
+
+#main > header > p:nth-child(5),
+#main > header > p:nth-child(6) {
+  text-transform: none;
+}
+#main > header > p:nth-child(6) {
+  margin: 0;
+  border-top: none;
+}
+
+#header span {
+  display: block;
+  width: 30%;
+  margin: 10px auto;
 }
