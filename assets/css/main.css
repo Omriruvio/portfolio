@@ -213,6 +213,7 @@ a {
   border-bottom: dotted 1px;
   color: #4eb980;
   text-decoration: none;
+  display: inline-block;
 }
 
 a:hover {
@@ -295,6 +296,10 @@ blockquote {
   border-left: solid 0.5em rgba(224, 224, 224, 0.75);
   font-style: italic;
   padding: 1em 0 1em 2em;
+}
+
+strong {
+  color: #51A4FB;
 }
 
 /* Container */
@@ -2841,6 +2846,7 @@ input[type='button'].small,
   min-height: 100%;
   min-width: 100%;
   position: absolute;
+  object-fit: contain;
 }
 
 .feature:before {
@@ -3129,7 +3135,7 @@ input[type='button'].small,
   z-index: 1;
 }
 
-#main:before {
+/* #main:before {
   background: rgba(224, 224, 224, 0.75);
   content: '';
   height: 100%;
@@ -3138,7 +3144,7 @@ input[type='button'].small,
   top: 0;
   width: 1px;
   z-index: -1;
-}
+} */
 
 #main header.major,
 #main footer.major {
@@ -3400,7 +3406,7 @@ input[type='button'].small,
   /* Feature */
 
   .feature {
-    background: #ffffff;
+    /* background: #ffffff; */
     display: block;
     height: auto;
     margin-bottom: 2em;
@@ -3643,12 +3649,12 @@ input[type='button'].small,
 }
 
 .box.alt.container img {
-  padding: 0 1px;
+  padding: 0 2px;
 }
 
 @media (prefers-color-scheme: dark) and (max-width: 840px) {
   #header {
-    background-image: url(images/top-3200-dark.svg), url(./images/spacer.png) !important;
+    background-image: url(images/top-3200-dark.svg), url(./images/spacer-dark.png) !important;
 }
 
 /* todo: test correcting ::before ::after lines to 0.5 opacity */
