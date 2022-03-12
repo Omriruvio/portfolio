@@ -2092,7 +2092,7 @@ article.special {
   }
   50% {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    fill: black;
+    fill: #424242;
   }
   100% {
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
@@ -2106,7 +2106,7 @@ article.special {
   }
   1.25% {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    fill: black;
+    fill: #424242;
   }
   2.5%,
   100% {
@@ -3609,3 +3609,46 @@ input[type='button'].small,
   width: 30%;
   margin: 10px auto;
 }
+
+@media (prefers-color-scheme: dark) {
+  #header {
+    background-image: url(images/top-3200-dark.svg), url(images/omri1.png), url(images/omri2.png), url(images/spacer-dark.png),
+      url(../../images/header.jpg);
+  }
+
+  #footer {
+    background-color: #0A0D27;
+    background-image: url(images/bottom-3200-dark.svg);
+  }
+
+  body {
+    background-color: #181a1b;
+  }
+
+  body, input, textarea, header p {
+    color: #a5a5a5;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #adadad;
+  }
+
+  #main header.major {
+    background-color: #181a1b !important;
+  }
+
+  .box {
+    background-color: #181a1b;
+  }
+}
+
+.box.alt.container img {
+  padding: 0 1px;
+}
+
+@media (prefers-color-scheme: dark) and (max-width: 840px) {
+  #header {
+    background-image: url(images/top-3200-dark.svg), url(./images/spacer.png) !important;
+}
+
+/* todo: test correcting ::before ::after lines to 0.5 opacity */
