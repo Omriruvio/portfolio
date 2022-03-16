@@ -28,3 +28,37 @@
 
 })(jQuery);
 
+const iconHead = document.querySelector('.logo-head');
+const iconGlasses = document.querySelector('.logo-glasses');
+const logoLeftEye = document.querySelector('.logo-left-eyelid');
+const logoRightEye = document.querySelector('.logo-right-eyelid');
+const eyesContainer = [ logoLeftEye, logoRightEye ];
+
+const animateHead = () => iconHead.classList.add('js-move-head');
+const animateEyes = () => eyesContainer.forEach(item => item.classList.add('js-wink', 'js-move-eyes'))
+const animateGlasses = () => iconGlasses.classList.add('js-move-eyes');
+const keepRightEyeOpen = () => logoRightEye.classList.add('js-keep-eye-open');
+
+const stopHeadAnimation = () => iconHead.classList.remove('js-move-head');
+const stopEyesAnimation = () => eyesContainer.forEach(item => item.classList.remove('js-wink', 'js-move-eyes'));
+const stopGlassesAnimation = () => iconGlasses.classList.remove('js-move-eyes');
+const stopKeepRightEyeOpen = () => logoRightEye.classList.remove('js-keep-eye-open');
+
+const animationStartDelay = 2000;
+const animationEndDelay = 4500;
+
+iconHead.addEventListener('transitionend', () => setTimeout(stopHeadAnimation, animationEndDelay))
+iconGlasses.addEventListener('transitionend', () => setTimeout(stopGlassesAnimation, animationEndDelay))
+eyesContainer.forEach(item => {
+	item.addEventListener('transitionend', () => setTimeout(stopEyesAnimation, animationEndDelay))
+})
+logoRightEye.addEventListener('transitionend', () => setTimeout(stopKeepRightEyeOpen, animationEndDelay))
+
+window.addEventListener('load', (event) => {
+	setTimeout(animateHead, animationStartDelay);
+	setTimeout(animateEyes, animationStartDelay);
+	setTimeout(animateGlasses, animationStartDelay);
+	setTimeout(keepRightEyeOpen, animationStartDelay);
+  console.log('page is fully loaded');
+});
+

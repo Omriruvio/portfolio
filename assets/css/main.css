@@ -299,7 +299,7 @@ blockquote {
 }
 
 strong {
-  color: #51A4FB;
+  color: #51a4fb;
 }
 
 /* Container */
@@ -2127,19 +2127,35 @@ article.special {
 }
 
 #header:hover .logo-head {
+  /* transform: rotate(180deg); */
+  /* fill: rgb(145, 214, 16); */
+}
+
+.js-move-head {
   transform: rotate(180deg);
-  fill: rgb(145, 214, 16);
+  fill: rgb(145, 214, 16) !important;
 }
 
 #header:hover .logo-glasses,
 #header:hover .logo-left-eyelid,
 #header:hover .logo-right-eyelid {
-  transform: translateY(-75%);
+  /* transform: translateY(-75%); */
 }
 
 #header:hover .logo-left-eyelid,
 #header:hover .logo-right-eyelid {
+  /* animation: blink 0.5s ease-in-out 4s 1 alternate none; */
+}
+
+.js-move-eyes {
+  transform: translateY(-75%) !important;
+}
+
+.js-wink {
   animation: blink 0.5s ease-in-out 4s 1 alternate none;
+}
+.js-keep-eye-open {
+  fill: transparent !important;
 }
 
 #header:hover .logo-right-eyelid {
@@ -3623,7 +3639,7 @@ input[type='button'].small,
   }
 
   #footer {
-    background-color: #0A0D27;
+    background-color: #0a0d27;
     background-image: url(images/bottom-3200-dark.svg);
   }
 
@@ -3631,11 +3647,19 @@ input[type='button'].small,
     background-color: #181a1b;
   }
 
-  body, input, textarea, header p {
+  body,
+  input,
+  textarea,
+  header p {
     color: #a5a5a5;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: #adadad;
   }
 
@@ -3655,6 +3679,6 @@ input[type='button'].small,
 @media (prefers-color-scheme: dark) and (max-width: 840px) {
   #header {
     background-image: url(images/top-3200-dark.svg), url(./images/spacer-dark.png) !important;
+  }
 }
-
-/* todo: test correcting ::before ::after lines to 0.5 opacity */
+/* todo: test correcting ::before ::after lines to 0.5 opacity  */
