@@ -28,6 +28,7 @@
 
 })(jQuery);
 
+const omriLogoIcon = document.querySelector('#omri-logo-icon');
 const iconHead = document.querySelector('.logo-head');
 const iconGlasses = document.querySelector('.logo-glasses');
 const logoLeftEye = document.querySelector('.logo-left-eyelid');
@@ -37,12 +38,12 @@ const eyesContainer = [ logoLeftEye, logoRightEye ];
 const animateHead = () => iconHead.classList.add('js-move-head');
 const animateEyes = () => eyesContainer.forEach(item => item.classList.add('js-wink', 'js-move-eyes'))
 const animateGlasses = () => iconGlasses.classList.add('js-move-eyes');
-const keepRightEyeOpen = () => logoRightEye.classList.add('js-keep-eye-open');
+const animateRightEye = () => logoRightEye.classList.add('js-keep-eye-open');
 
 const stopHeadAnimation = () => iconHead.classList.remove('js-move-head');
 const stopEyesAnimation = () => eyesContainer.forEach(item => item.classList.remove('js-wink', 'js-move-eyes'));
 const stopGlassesAnimation = () => iconGlasses.classList.remove('js-move-eyes');
-const stopKeepRightEyeOpen = () => logoRightEye.classList.remove('js-keep-eye-open');
+const stopAnimateRightEye = () => logoRightEye.classList.remove('js-keep-eye-open');
 
 const animationStartDelay = 2000;
 const animationEndDelay = 4500;
@@ -52,13 +53,23 @@ iconGlasses.addEventListener('transitionend', () => setTimeout(stopGlassesAnimat
 eyesContainer.forEach(item => {
 	item.addEventListener('transitionend', () => setTimeout(stopEyesAnimation, animationEndDelay))
 })
-logoRightEye.addEventListener('transitionend', () => setTimeout(stopKeepRightEyeOpen, animationEndDelay))
+logoRightEye.addEventListener('transitionend', () => setTimeout(stopAnimateRightEye, animationEndDelay))
+
+// omriLogoIcon.addEventListener('transitionend', () => console.log('Logo trainsition ended'));
+// todo - combine listeners to single listener
+// fix mouseenter listener and losing sync in animations
+
+const animateLogo = () => {
+	animateHead()
+	animateEyes()
+	animateGlasses()
+	animateRightEye()
+}
+
+// omriLogoIcon.addEventListener('mouseenter', animateLogo);
 
 window.addEventListener('load', (event) => {
-	setTimeout(animateHead, animationStartDelay);
-	setTimeout(animateEyes, animationStartDelay);
-	setTimeout(animateGlasses, animationStartDelay);
-	setTimeout(keepRightEyeOpen, animationStartDelay);
+	setTimeout(animateLogo, animationStartDelay);
   console.log('page is fully loaded');
 });
 
