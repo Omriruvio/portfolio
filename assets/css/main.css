@@ -1586,6 +1586,14 @@ strong {
 }
 
 @media screen and (max-width: 736px) {
+  div.col-12.contact__text-area-wrapper{
+    padding-top: 20px;
+  }
+
+  div.col-12.contact__submit-button-wrapper {
+    padding-top: 20px;
+  }
+
   .row {
     display: flex;
     flex-wrap: wrap;
@@ -2129,25 +2137,9 @@ article.special {
   animation: blinking 20s ease-in-out infinite;
 }
 
-#header:hover .logo-head {
-  /* transform: rotate(180deg); */
-  /* fill: rgb(145, 214, 16); */
-}
-
 .js-move-head {
   transform: rotate(180deg);
   fill: rgb(145, 214, 16) !important;
-}
-
-#header:hover .logo-glasses,
-#header:hover .logo-left-eyelid,
-#header:hover .logo-right-eyelid {
-  /* transform: translateY(-75%); */
-}
-
-#header:hover .logo-left-eyelid,
-#header:hover .logo-right-eyelid {
-  /* animation: blink 0.5s ease-in-out 4s 1 alternate none; */
 }
 
 .js-move-eyes {
@@ -2159,10 +2151,6 @@ article.special {
 }
 .js-keep-eye-open {
   fill: transparent !important;
-}
-
-#header:hover .logo-right-eyelid {
-  /* fill: transparent !important; */
 }
 
 .logo-glasses,
@@ -3684,4 +3672,9 @@ input[type='button'].small,
     background-image: url(images/top-3200-dark.svg), url(./images/spacer-dark.png) !important;
   }
 }
-/* todo: test correcting ::before ::after lines to 0.5 opacity  */
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
